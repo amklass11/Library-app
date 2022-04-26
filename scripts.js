@@ -44,4 +44,7 @@ function addBookToShelf(book) {
     bookShelf.appendChild(bookcard);
 }
 
+localStorage.setItem(JSON.stringify({'MyLibrary': myLibrary}));
+
+
 
