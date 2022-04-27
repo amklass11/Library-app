@@ -1,4 +1,75 @@
+@font-face {
+  font-family: 'Lato', sans-serif;
+  src: url(./Fonts/Righteous/Righteous-Regular.ttf);
+}
+
 body {
-  color: beige;
-  background-color: gold;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  background-color: rgb(176, 172, 148);
+}
+
+.addbook {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+}
+
+h1 {
+  font-family: 'Lato', sans-serif;
+  font-size: 3em;
+  font-weight: 800;
+  margin-bottom: 20px;
+  margin-top: 70px;
+}
+
+h2 {
+  font-family: 'Lato', sans-serif;
+  font-size: 1.5em;
+  font-weight: 1000;
+}
+
+#books {
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+}
+
+.bookStorage {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 500px;
+  background-color: #e6bbbb;
+  border: solid 1px #fff;
+  border-radius: 2px;
+  color: black;
+}
+
+p {
+  font-family: 'Lato', sans-serif;
+  font-size: 1em;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+
+button {
+  height: 30px;
+  margin-right: 10px;
+}
+
+#btn:active,
+button:active {
+  color: #d3d3d3;
+  background-color: #ec5242;
+  box-shadow: 0 2px #272a31;
+  transform: translateY(5px);
+}
+
+#autor {
+  margin-right: 10px;
 }
