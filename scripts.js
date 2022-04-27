@@ -1,57 +1,52 @@
-const myLibrary = [];
-let newId = 1;
+const bookshelf = document.getElementById('bookshelf');
+const title = document.getElementById('title');
+const author = document.getElementById('author');
+const addBtn = document.getElementById('btn');
+let dataBooks = JSON.parse(localStorage.getItem('book')) || [];
 
-class Library {
-    constructor() {
-        this.myLibrary = [];
-      }
-  addBook(id, title, author) {
-    this.id = id;
-    const book = {
-      id, title, author,
-    };
-    myLibrary.push(book);
-    return book;
+class Libro {
+  constructor(title, author) {
+    this.dataBooks = [title, author];
+    this.title = title;
+    this.author = author;
   }
 
-  removeBook(id) {
-    this.myLibrary = myLibrary.filter((book) => book.id !== id);
-    return myLibrary;
+  deleteBook = (index) => {
+    dataBooks.splice(index, 1);
+    localStorage.setItem('book', JSON.stringify(dataBooks));
   }
 
-  removeBookwin(event) {
-    const btn = event.target;
-    const { value } = btn;
-    removeBook(value);
-    btn.parentElement.remove();
-  }
-
-  addBookToShelf(book) {
-    const bookShelf = document.getElementById('bookShelf');
-    bookShelf.setAttribute('style', 'display:flex; flex-direction: column; margin-left: 43%;');
-    const bookdiv = document.createElement('div');
-    const bookcard = document.createElement('div');
-    bookcard.setAttribute('style', 'text-align:center; width: 200px; display:flex; flex-direction: column; gap: 10px;');
-    bookcard.textContent = `${book.title} by ${book.author}`;
-    const removebtn = document.createElement('button');
-    removebtn.textContent = 'remove';
-    removebtn.value = book.id;
-    removebtn.onclick = this.removeBookwin;
-    bookdiv.appendChild(bookcard);
-    bookcard.appendChild(removebtn);
-    bookShelf.appendChild(bookcard);
-  }
-
-  newBook() {
-    const title = document.getElementById('title');
-    const author = document.getElementById('author');
-    newId += newId + 1;
-    const book = this.addBook(newId, title.value, author.value);
-    this.addBookToShelf(book);
+  addBook = (libro) => {
+    dataBooks.push(libro);
+    localStorage.setItem('book', JSON.stringify(dataBooks));
   }
 }
 
-const abb = document.querySelector('#nas');
-abb.addEventListener('click', () => {
-  new Library().newBook();
+const printList = () => {
+  const libro = new Libro();
+  bookshelf.innerHTML = null;
+  if (localStorage.getItem('book')) {
+    dataBooks = JSON.parse(localStorage.getItem('book')) || [];
+  }
+  for (let i = 0; i < dataBooks.length; i += 1) {
+    const bookStorage = document.createElement('div');
+    const bookInfo = document.createElement('p');
+    const deleteBtn = document.createElement('button');
+    bookInfo.textContent = `"${dataBooks[i].title}" by ${dataBooks[i].author}`;
+    deleteBtn.textContent = 'Remove';
+    bookshelf.appendChild(bookStorage);
+    bookStorage.append(bookInfo, deleteBtn);
+    bookStorage.className = 'bookStorage';
+    deleteBtn.addEventListener('click', () => {
+      bookStorage.remove();
+      libro.deleteBook(i);
+    });
+  }
+};
+
+printList();
+
+addBtn.addEventListener('click', () => {
+  const libro = new Libro(title.value, author.value);
+  libro.addBook(libro);
 });
