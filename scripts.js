@@ -22,7 +22,6 @@ class Libro {
   }
 }
 
-<<<<<<< HEAD
 const printList = () => {
   const libro = new Libro();
   bookshelf.innerHTML = null;
@@ -51,10 +50,10 @@ addBtn.addEventListener('click', () => {
   const libro = new Libro(title.value, author.value);
   libro.addBook(libro);
 });
-=======
+
 const abb = document.querySelector('#nas');
 abb.addEventListener('click', () => {
   new Library().newBook();
 });
 localStorage.setItem(JSON.stringify({ MyLibrary: myLibrary }));
->>>>>>> 7da64e51875adfe4b709697ef7f3909eb9f9a503
+
