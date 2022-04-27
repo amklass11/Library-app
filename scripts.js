@@ -2,6 +2,9 @@ const myLibrary = [];
 let newId = 1;
 
 class Library {
+    constructor() {
+        this.myLibrary = [];
+      }
   addBook(id, title, author) {
     this.id = id;
     const book = {
@@ -19,7 +22,7 @@ class Library {
   removeBookwin(event) {
     const btn = event.target;
     const { value } = btn;
-    this.removeBook(value);
+    removeBook(value);
     btn.parentElement.remove();
   }
 
@@ -48,11 +51,7 @@ class Library {
   }
 }
 
-function makeBook() {
+const abb = document.querySelector('#nas');
+abb.addEventListener('click', () => {
   new Library().newBook();
-}
-
-// localStorage.setItem(JSON.stringify({ MyLibrary: myLibrary }));
-
-console.log(makeBook);
-console.log(myLibrary);
+});
