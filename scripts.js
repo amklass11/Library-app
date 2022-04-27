@@ -55,3 +55,7 @@ const abb = document.querySelector('#nas');
 abb.addEventListener('click', () => {
   new Library().newBook();
 });
+const rev = document.querySelector('.rmv');
+rev.addEventListener('click',() => {
+  new Library().removeBookwin();
+})
