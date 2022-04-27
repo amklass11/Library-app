@@ -50,10 +50,3 @@ addBtn.addEventListener('click', () => {
   const libro = new Libro(title.value, author.value);
   libro.addBook(libro);
 });
-
-const abb = document.querySelector('#nas');
-abb.addEventListener('click', () => {
-  new Library().newBook();
-});
-localStorage.setItem(JSON.stringify({ MyLibrary: myLibrary }));
-
