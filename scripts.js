@@ -3,7 +3,7 @@ const addBookbtn = document.getElementById('addbookBtn');
 const contactBtn = document.getElementById('contactBtn');
 const containerBooks = document.getElementById('container');
 const books = document.getElementById('books');
-const addNew = document.getElementById('addbook');
+const addNew = document.getElementsByClassName('addbook');
 const contact = document.getElementById('contact');
 const titulo = document.getElementById('titulo');
 const autor = document.getElementById('autor');
@@ -107,5 +107,5 @@ addBookbtn.addEventListener('click', () => {
 contactBtn.addEventListener('click', () => {
   containerBooks.style.display = 'none';
   addNew.style.display = 'none';
-  contact.style.display = 'flex';
+  contact.style.display = 'block';
 });
