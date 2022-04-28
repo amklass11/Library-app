@@ -31,14 +31,28 @@ h2 {
   color: rgb(1, 93, 93);
 }
 
+h1 {
+  text-align: center;
+}
+
+.bookStorage {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #d3d3d3;
+  border: solid 2px #272a31;
+  border-radius: 2px;
+  padding: 1%;
+}
+
 button {
   font-size: 1em;
   font-weight: bold;
   margin-top: 10px;
-  width: 300px;
+  width: 120px;
   padding: 10px;
   color: black;
-  margin-left: 40px;
+  margin-left: 17%;
 }
 
 #btn:active,
