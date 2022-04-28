@@ -19,7 +19,7 @@
   margin-top: 12px;
 }
 
-.navigation li a{
+.navigation li a {
   text-decoration: none;
   color: black;
   font-size: large;
@@ -30,6 +30,7 @@
 h2 {
   color: rgb(1, 93, 93);
 }
+
 button {
   font-size: 1em;
   font-weight: bold;
@@ -38,7 +39,6 @@ button {
   padding: 10px;
   color: black;
   margin-left: 40px;
-  
 }
 
 #btn:active,

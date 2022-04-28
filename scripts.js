@@ -10,7 +10,6 @@ const autor = document.getElementById('autor');
 const addBtn = document.getElementById('btn');
 let dataBooks = JSON.parse(localStorage.getItem('book')) || [];
 
-// This code below was recovered from https://programacion.net/
 function checkTime(i) {
   if (i < 10) {
     i = `0${i}`;
@@ -40,7 +39,7 @@ function startTime() {
   document.getElementById('date').innerHTML = date;
   setTimeout(() => { startTime(); }, 1000);
 }
-// This code above was recovered from https://programacion.net/
+
 
 window.onload = startTime();
 
