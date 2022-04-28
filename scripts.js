@@ -40,7 +40,6 @@ function startTime() {
   setTimeout(() => { startTime(); }, 1000);
 }
 
-
 window.onload = startTime();
 
 class Libro {
